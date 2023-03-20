@@ -1,0 +1,122 @@
+.login {
+  margin-top: 15%;
+}
+.loginContainer {
+  max-width: 500px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.loginVirst {
+  position: relative;
+  background-color: rgb(105, 244, 142);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  h1 {
+    font-size: 30px;
+    color: #ffff;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+}
+.loginForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-items: flex-end;
+}
+.label {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  &:hover {
+    color: #084de1;
+  }
+}
+.input {
+  padding: 0 0 0 0;
+  border: none;
+  border-bottom: 2px solid rgb(97, 130, 239);
+  outline: none;
+  background-color: inherit;
+  color: #084de1;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px dashed #ffffff;
+  }
+}
+.active {
+  color: #084de1;
+  .input {
+    border-bottom: 2px dashed #ffffff;
+  }
+}
+.buttonSubmit {
+  display: flex;
+  button {
+    font-size: 20px;
+    border: none;
+    border-radius: 17px;
+    background-color: rgb(84, 72, 245);
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 5px 15px;
+    &:hover {
+      background-color: #ffffff;
+      color: rgb(84, 72, 245);
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+.loginArrow {
+  width: 30px;
+  size: cover;
+}
+.whatAcc {
+  color: #084de1;
+  cursor: pointer;
+  padding-top: 15px;
+  padding-left: 20px;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  .loginVirst {
+    padding: 5px;
+    h1 {
+      font-size: 20px;
+    }
+  }
+  .label {
+    font-size: 10px;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  .input {
+    max-width: 150px;
+  }
+  .buttonSubmit {
+    button {
+      font-size: 10px;
+      padding: 5px 5px;
+    }
+  }
+}
+.messageDiv {
+  position: absolute;
+  font-size: 20px;
+  color: #499cef;
+  top: 55%;
+}

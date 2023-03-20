@@ -1,0 +1,110 @@
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.headerVirst {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  align-items: center;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+  float: right;
+}
+.button {
+  button {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: rgb(72, 245, 90);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 7px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(33, 228, 59, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(33, 228, 59, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(33, 228, 59, 0.2);
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.5;
+      cursor: unset;
+    }
+  }
+  &:hover {
+    button:not([disabled]) {
+      background-color: rgb(54, 146, 227);
+    }
+  }
+}
+
+.aboutUser {
+  display: none;
+  background-color: rgb(105, 181, 248);
+  padding: 10px 10px;
+  border: 2px solid rgb(105, 181, 248);
+  border-radius: 10px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(33, 141, 228, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(33, 141, 228, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(33, 141, 228, 0.2);
+  cursor: pointer;
+  &:hover {
+    border: 2px dashed rgb(72, 245, 90);
+  }
+}
+.headerAvatar {
+  width: 40px;
+  height: 40px;
+  font-size: cover;
+  size: cover;
+  border-radius: 100px;
+  font-weight: 700;
+}
+.headerName {
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+.headerEmail {
+  color: #ffffff;
+}
+.headerExit {
+  button {
+    font-size: 15px;
+    border: none;
+    background-color: rgb(105, 181, 248);
+    color: #ffffff;
+    padding: 10px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(33, 141, 228, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(33, 141, 228, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(33, 141, 228, 0.2);
+  }
+  &:hover {
+    button {
+      background-color: rgb(72, 245, 90);
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .buttons {
+    flex-direction: column-reverse;
+    gap: 7px;
+  }
+  .aboutUser {
+    font-size: 10px;
+  }
+}
+@media (max-width: 370px) {
+  .headerVirst {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    gap: 10px;
+  }
+}

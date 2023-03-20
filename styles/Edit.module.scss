@@ -1,0 +1,175 @@
+.edit {
+  margin-top: 10%;
+}
+.editContainer {
+  max-width: 600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.editVirst {
+  background-color: rgba(93, 211, 227, 0.333);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  border-radius: 15px;
+  border: none;
+  h1 {
+    margin: 0 auto;
+    font-size: 30px;
+    color: #ffff;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+}
+.editForm {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-items: flex-start;
+}
+.label {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  &:hover {
+    color: #084de1;
+  }
+}
+.input {
+  padding: 0 0 0 0;
+  border: none;
+  border-bottom: 2px solid rgb(97, 130, 239);
+  outline: none;
+  background-color: inherit;
+  color: #084de1;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px dashed #ffffff;
+  }
+}
+.input::placeholder {
+  color: #aacff9a8;
+}
+.active {
+  color: #084de1;
+  .input {
+    border-bottom: 2px dashed #ffffff;
+  }
+}
+.buttonSubmit {
+  margin: 0 auto;
+  button {
+    font-size: 20px;
+    border: none;
+    border-radius: 17px;
+    background-color: rgb(3, 3, 244);
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 5px 15px;
+    &:hover {
+      background-color: #ffffff;
+      color: rgb(3, 3, 244);
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+.editButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.buttonCansel {
+  button {
+    font-size: 20px;
+    border: none;
+    border-radius: 17px;
+    background-color: rgb(72, 193, 245);
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 5px 15px;
+    &:hover {
+      background-color: #ffffff;
+      color: rgb(72, 193, 245);
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+.editAvatar {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  input {
+    position: absolute;
+    left: 82%;
+    border-radius: 30px;
+    top: 2px;
+    max-width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}
+.photoAvatar {
+  width: 40px;
+  height: 40px;
+  size: cover;
+  border-radius: 30px;
+}
+.photoIco {
+  position: absolute;
+  left: 87%;
+  opacity: 0.5;
+  max-width: 20px;
+}
+@media (max-width: 540px) {
+  .editVirst {
+    padding: 5px;
+    h1 {
+      font-size: 20px;
+    }
+  }
+  .label {
+    font-size: 10px;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  .input {
+    max-width: 150px;
+  }
+  .buttonSubmit {
+    button {
+      font-size: 10px;
+      padding: 5px 5px;
+    }
+  }
+  .buttonCansel {
+    button {
+      font-size: 10px;
+      padding: 5px 5px;
+    }
+  }
+}
+.divError {
+  position: absolute;
+  font-size: 50px;
+  top: -20%;
+  color: #084de1;
+  z-index: 1;
+}

@@ -1,0 +1,33 @@
+.undefined {
+  margin-top: 10%;
+}
+.undefinedContainer {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.undefinedVirst {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  h1 {
+    color: #1e2cef;
+    font-size: 50px;
+    font-weight: 700;
+  }
+}
+.buttonUndefined {
+  button {
+    background-color: rgb(114, 240, 50);
+    font-size: 30px;
+    border: 2px solid rgb(114, 240, 50);
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffff;
+    &:hover {
+      border: 2px dashed rgb(255, 255, 255);
+      color: rgb(50, 82, 240);
+    }
+  }
+}

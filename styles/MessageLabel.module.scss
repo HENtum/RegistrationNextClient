@@ -1,0 +1,18 @@
+.messageLabel {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  height: 35px;
+  background-color: rgb(72, 245, 90);
+  border-radius: 10px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.messageVirst {
+  color: #ffff;
+  font-size: 20px;
+  font-weight: 700;
+}
