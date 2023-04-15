@@ -1,71 +1,11 @@
-import { instance } from "@/src/api/api.interceptor";
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getContentType } from "../../../api/api.helper";
-import { AuthService } from "../../../services/auth.service";
+import { createSlice } from "@reduxjs/toolkit";
 import {
-  UserCreateParams,
-  UserEditParams,
-  UserLoginTap2Params,
-} from "./userTypes";
-
-export const fetchCreateUser = createAsyncThunk(
-  "user/create",
-  async (params: UserCreateParams) => {
-    const { data } = await instance({
-      url: "/user/create",
-      method: "POST",
-      data: params,
-      headers: getContentType(),
-    });
-    return data;
-  }
-);
-export const fetchLoginUser = createAsyncThunk(
-  "user/login",
-  async (params: { email: string }) => {
-    const { data } = await instance({
-      url: "/user/login",
-      method: "POST",
-      data: params,
-      headers: getContentType(),
-    });
-    return data;
-  }
-);
-export const fetchLoginTap2User = createAsyncThunk(
-  "user/loginTap2",
-  async (params: UserLoginTap2Params) => {
-    const { data } = await instance({
-      url: "/user/login/password",
-      method: "POST",
-      data: params,
-      headers: getContentType(),
-    });
-    return data;
-  }
-);
-export const fetchEditUser = createAsyncThunk(
-  "user/edit",
-  async (params: UserEditParams) => {
-    const { data } = await instance({
-      url: "/user/edit",
-      method: "PATCH",
-      data: params,
-    });
-    return data;
-  }
-);
-export const fetchValidUser = createAsyncThunk("user/valid", async () => {
-  const { data } = await instance({
-    url: "/user",
-    method: "GET",
-    headers: getContentType(),
-  });
-  if (data) {
-    AuthService.getNewTokens();
-    return data;
-  }
-});
+  fetchCreateUser,
+  fetchEditUser,
+  fetchLoginTap2User,
+  fetchLoginUser,
+  fetchValidUser,
+} from "../../actions/user.action";
 interface InititalState {
   user: {
     user: {
@@ -170,5 +110,4 @@ const userSlice = createSlice({
   },
 });
 
-export const { deleteMessage } = userSlice.actions;
-export default userSlice.reducer;
+export default userSlice;

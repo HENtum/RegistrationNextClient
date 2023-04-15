@@ -108,3 +108,18 @@
     gap: 10px;
   }
 }
+.forButton {
+  :hover {
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+  }
+  .button {
+    font-size: 25px;
+    border: none;
+    padding: 5px;
+    border-radius: 20px;
+    color: #ffffff;
+    background: rgb(104, 169, 210);
+    cursor: pointer;
+  }
+}

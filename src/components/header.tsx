@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import Link from "next/link";
-import { RootState } from "../redux/store";
 import { getAccessToken, removeTokenStorage } from "../services/auth.helper";
 import { useRouter } from "next/router";
 import styles from "@/styles/Header.module.scss";
 import Image from "next/image";
+import { useUser } from "../hooks/useUser";
+import { useActions } from "../hooks/useActions";
 
 export const Header = () => {
+  const { openForm, keyToCreate } = useActions();
   const [isView, setIsView] = useState(false);
-  const user = useSelector((state: RootState) => state.userSlice.user);
+  const { user } = useUser();
   const router = useRouter();
   const pathname = router.pathname;
   useEffect(() => {
@@ -30,26 +31,40 @@ export const Header = () => {
           }
         >
           {isView && (
-            <Link href="/user/edit">
-              <div className={styles.aboutUser}>
-                <Image
-                  className={styles.headerAvatar}
-                  src={
-                    user.user?.avatar === null
-                      ? "/images/avatar.png"
-                      : `http://localhost:4000/${user.user?.avatar}`
-                  }
-                  alt="avatar"
-                  width="60"
-                  height="60"
-                />
+            <>
+              <Link href="/user/edit">
+                <div className={styles.aboutUser}>
+                  <Image
+                    className={styles.headerAvatar}
+                    src={
+                      user?.avatar === null
+                        ? "/images/avatar.png"
+                        : `http://localhost:4000/${user?.avatar}`
+                    }
+                    alt="avatar"
+                    width="60"
+                    height="60"
+                  />
 
-                <div>
-                  <div className={styles.headerName}>{user.user?.name}</div>
-                  <div className={styles.headerEmail}>{user.user?.email}</div>
+                  <div>
+                    <div className={styles.headerName}>{user?.name}</div>
+                    <div className={styles.headerEmail}>{user?.email}</div>
+                  </div>
                 </div>
+              </Link>
+
+              <div className={styles.forButton}>
+                <button
+                  onClick={() => {
+                    keyToCreate();
+                    openForm(0);
+                  }}
+                  className={styles.button}
+                >
+                  Создать заметку
+                </button>
               </div>
-            </Link>
+            </>
           )}
           {!isView ? (
             <div className={styles.buttons}>

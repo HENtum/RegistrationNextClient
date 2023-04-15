@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteMessage } from "../redux/slices/userSlice/userSlice";
 import { RootState } from "../redux/store";
 
 import styles from "@/styles/MessageLabel.module.scss";
+import { useActions } from "../hooks/useActions";
 
 const MessageLabel = () => {
-  const user = useSelector((state: RootState) => state.userSlice.user);
+  const { deleteMessage } = useActions();
+  const user = useSelector((state: RootState) => state.user.user);
   const dispatch = useDispatch();
   useEffect(() => {
     setTimeout(() => {
-      dispatch(deleteMessage());
+      deleteMessage();
     }, 2500);
   }, [user.message, dispatch]);
   return (

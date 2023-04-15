@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  gap: 5px;
+  font-size: 30px;
+}
+.editIcon {
+  &:hover {
+    color: #ffff;
+    cursor: pointer;
+  }
+}
+.removeIcon {
+  &:hover {
+    color: #ffff;
+    cursor: pointer;
+  }
+}
