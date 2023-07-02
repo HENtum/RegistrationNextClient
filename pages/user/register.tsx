@@ -19,7 +19,7 @@ const Register = () => {
   const { fetchCreateUser } = useActions();
   const { token } = useUser();
   useEffect(() => {
-    if (token.accessToken) {
+    if (token?.accessToken) {
       saveTokenStroage(token);
       router.push("/");
     }
